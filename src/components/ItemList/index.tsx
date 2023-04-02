@@ -1,17 +1,19 @@
 import { TouchableOpacity, View, Text } from "react-native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
-import styles from "./styles";
+import styles, { HEIGHT, MARGIN_BOTTOM } from "./styles";
 
-interface IItemList {
+export const CARD_HEIGHT = HEIGHT + MARGIN_BOTTOM;
+
+export interface IItemList {
+  id: string;
   title: string;
-  onPress(): void;
 }
 
-export const ItemList: React.FC<IItemList> = ({ onPress, title }) => (
+export const ItemList: React.FC<IItemList> = ({ title }) => (
   <View style={styles.container}>
     <Text style={styles.title}>{title}</Text>
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={styles.button}>
       <Icon name="dots-grid" size={22} color="#fff" />
     </TouchableOpacity>
   </View>
