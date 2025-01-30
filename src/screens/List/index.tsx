@@ -1,13 +1,14 @@
-import { FlatList, ScrollView, Text, View } from "react-native";
-
-import { listCategoriesMock } from "./mock";
-import styles from "./styles";
-import MovableCard from "../../components/MovableCard";
-import { CARD_HEIGHT } from "../../components/ItemList";
+import { Text, View } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from "react-native-reanimated";
+
+import MovableCard from "../../components/MovableCard";
+import { CARD_HEIGHT } from "../../components/ItemList";
+
+import { listCategoriesMock } from "./mock";
+import styles from "./styles";
 
 export interface IListCategories {
   id: string;
